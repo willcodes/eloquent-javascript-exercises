@@ -4,28 +4,27 @@
 //BONUS: add "step", which tells program how much to increment, also should work for negatives.
 
 
-function range(n1,n2, step) {
+function range(min,max, step) {
     var numRange = [];
-    var isNegative = false;
-    
     if (step >= 0) {
-        for (var i = n1; i <= n2; i+=step) {
+        for (var i = min; i <= max; i+=step) {
             numRange.push(i);
         }
     }
 
     else if (step == undefined) {
-        for (var i = n1; i <= n2; i++) {
+        for (var i = min; i <= max; i++) {
             numRange.push(i);
         }
     }
 
     else {
         step = Math.abs(step);
-        for (var i = n1; i >= n2; i-=step) {
+        for (var i = min; i >= max; i-=step) {
             numRange.push(i);
         }
     }
+    console.log("range Arr: " + numRange);
     rangeSum(numRange);
 }
 
@@ -34,8 +33,9 @@ function rangeSum(arr) {
     for (var i = 0; i < arr.length; i++) {
         sum += arr[i];
     }
+    console.log("Sum of Range: "+ sum);
 
 }
 
 
-range(10,5,-2);
+range(5,10);
